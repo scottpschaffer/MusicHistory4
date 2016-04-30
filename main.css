@@ -1,0 +1,126 @@
+body{
+  background-color: white;
+  width: 70%;
+  height: 80%;
+  margin: 10px auto;
+}
+
+div.first {
+  border: 2px solid black;
+  background-color: #FFB4B0;
+}
+
+div.second {
+  width: 30%;
+  height: 370px;
+  border: 2px solid black;
+  background-color: #4DD7FA;
+  float: left;
+  margin: 10px 0px;
+}
+
+div.third {
+  width: 67%;
+  height: 670px;
+  border: 2px solid black;
+  background-color: #FEFAC0;
+  float: right;
+  margin: 10px 0px 10px 0px;
+}
+
+.sec {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20%;
+  /*margin: 0px auto 0px auto;*/
+}
+
+button {
+  height: 25px;
+  width: 110px;
+  border: 2px solid black;
+  border-radius: 15%;
+  margin: 20px 0px 10px 50px;
+  /*padding-left: 20px;*/
+  font-size: 17px;
+
+}
+
+.aaa {
+  width: 75%;
+}
+
+ul {
+  list-style-type: none;
+  
+}
+
+span{
+  
+}
+
+p{
+  padding-left: 10px;
+}
+
+h2 {
+  color: #785616;
+  padding-left: 10px;
+}
+
+li {
+  display: inline;
+}
+
+label {
+  margin-bottom: 20%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  padding: 2px;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+span.divider {
+  background-color: black;
+}
+
+span.checkboxes {
+  float: left;
+  margin-left: 35px;
+}
+
+span.songTitle {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.visible {
+  position: static;
+  opacity: 1;
+}
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+  height: 0px;
+}
+
+input[type="text"] {
+  width: 200px;
+}
+
+#buttonDiv {
+  text-align: center;
+  /*padding-top: 40px;*/
+  padding-right: 60px;
+}
+
+#dButton{
+  width: 70px;
+}

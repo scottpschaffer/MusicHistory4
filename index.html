@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Music History</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+  <div class="first">
+    <ul>
+    <li><a href="#" id="viewMusic">View Music</a></li><span class="divider"> </span>
+    <li><a href="#" id="addMusic">Add Music</a></li><span class="divider"> </span>
+    <li><a href="#">Profile</a></li>
+  </ul>
+  </div>
+
+  <form>
+    <div class="second">
+      <div class="sec">
+        <label for="range1">Song length:</label><br>
+        <input type="range" class="aaa" name="range1" width="80%"><br>
+      </div>
+      <div class="sec">
+        <label for="artists">Artist:</label><br>  
+        <select name="artists">
+          <option value="Phil Collins" selected>Phil Collins</option>
+          <option value="They Might Be Giants">They Might Be Giants</option>
+          <option value="Morrissey">Morrissey</option>
+          <option value="Squeeze">Squeeze</option>
+          <option value="Van Morrison">Van Morrison</option>
+        </select>
+      </div>
+      <div class="sec">
+        <label for="albums">Album:</label><br>
+        <select name="albums">
+          <option value="Face Value">Face Value</option>
+          <option value="Both Sides">Both Sides</option>
+          <option value="Dance Into the Light">Dance Into the Light</option>
+          <option value="Hello, I Must Be Going!">Hello, I Must Be Going!</option>
+          <option value="No Jacket Required">No Jacket Required</option>
+        </select>
+      </div>
+       <div class="sec">
+        <label for="checkboxes">Genre:</label>
+      </div>
+
+        <span class="checkboxes">
+          <div>
+            <input type="checkbox" name="Rock" id="rock" value="Rock">
+            <label for="rock">Rock</label>
+            </div>
+            <div>
+            <input type="checkbox" name="Pop" id="pop"value="Pop">
+            <label for="pop">Pop</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Blues" id="blues" value="Blues">
+            <label for="blues">Blues</label>
+          </div>
+        </span>
+        <span class="checkboxes">
+          <div>
+            <input type="checkbox" name="Classical" id="classical" value="Classical">
+            <label for="classical">Classical</label>
+          </div>
+          <div>
+            <input type="checkbox" name="Jazz" id="jazz" value="Jazz">
+            <label for="jazz">Jazz</label>
+          </div>
+          <div>
+            <input type="checkbox" name="HipHop" id="hipHop" value="HipHop">
+            <label for="hipHop">Hip hop</label>
+          </div>
+        </span>
+      <button>Filter</button>
+    </div>
+  </form>
+
+  <div id="listOfChoices" class="third">
+    <div id="add1" class="hidden">
+      <label for="song">Song</label>
+      <input type=text id="song" name="song" placeholder="Song Name">
+    
+      <label for="artist">Artist</label>
+      <input type=text id="artist" name="artist" placeholder="Artist Name">
+    
+      <label for="album">Album</label>
+      <input type=text id="album" name="album" placeholder="Album Name">
+  
+      <button id="addButton">Add</button>
+    </div>
+
+    <div id="view1" class="visible"></div>
+  </div>
+
+  <script src="js-101.js"></script>
+  <script src="listMusic.js"></script>
+  <script src="addMusic.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
