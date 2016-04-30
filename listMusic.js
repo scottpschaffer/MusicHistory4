@@ -43,7 +43,7 @@ function addSongsToList(songs0){
 
 // This variable x is used for preventing the More button in List View
 // from clicking more than once  
-let x = true;
+let stopMoreButton = true;
 
 function listMusic(){
   // Get element of Add Music div
@@ -90,7 +90,7 @@ function listMusic(){
   // For every song
   for (let k=0; k<songs.length; k++){
     // Split song to get title
-    var songSplit = songs[k].split("-");
+    let songSplit = songs[k].split("-");
     // Print out Song Title and other info
     viewDiv.innerHTML += `<article><header class='songTitle' id='art--${k}'>${songSplit[0]}</header> - ${songSplit[1]}<button class='dButton'>Delete</button></article><br>`;
   }
@@ -101,11 +101,9 @@ function listMusic(){
   let moreButton = document.getElementById("more");
 
   moreButton.addEventListener("click", function(){
-    console.log("x", x);
-    if (x){
+    if (stopMoreButton){
       addSongs2();
-      x = false;
-      console.log("x1", x);
+      stopMoreButton = false;
     }
 
   });
@@ -113,13 +111,10 @@ function listMusic(){
   let delButtons = document.getElementsByClassName("dButton");
   for (let l=0; l<delButtons.length; l++){
     delButtons[l].addEventListener("click", function(e){
-      // console.log("this", this);
-      // console.log("this.parentNode", this.parentNode);
-      // console.log("this.parentNode.parentNode", this.parentNode.parentNode);
-      // console.log("this.parentNode.innerText", this.parentNode.innerText);
-      // alert(songs);
-      // alert(songs.indexOf(this.parentNode.innerText, 10));
+      var idToRemove = this.parentNode.firstChild.getAttribute('id').split("--")[1];
+      alert(songs.splice(idToRemove, 1));
       this.parentNode.parentNode.removeChild(this.parentNode);
+      listMusic();
     });
   }
 
