@@ -1,5 +1,6 @@
 "use strict";
 
+// Call to add songs from first JSON file
 function addSongs1(){
   let songs1 = [];
   let songs1Loader = new XMLHttpRequest();
@@ -8,12 +9,14 @@ function addSongs1(){
         
         // Callback and pass list of cars (inventory)
         addSongsToList(songs1);
+        // Call to repaint div  with current list of songs
         listMusic();
       });
       songs1Loader.open("GET", "songs1.json");
       songs1Loader.send();
 }
 
+// Call to add songs from second JSON file
 function addSongs2(){
   let songs2 = [];
   let songs2Loader = new XMLHttpRequest();
@@ -22,19 +25,16 @@ function addSongs2(){
         
         // Callback and pass list of cars (inventory)
         addSongsToList(songs2);
-        // let divSongs2 = document.getElementById()
-        // for (let z=songs.length - songs2.length; z<songs.length; z++){
-
-        // }
+        // Call to repaint with current list
         listMusic();
       });
       songs2Loader.open("GET", "songs2.json");
       songs2Loader.send();
 }
 
+// formats each song and adds it to the array of songs
 function addSongsToList(songs0){
   for (let i=0; i<songs0.length; i++){
-    console.log("songs0", songs0[i].song);
     let tempSong = songs0[i].song + " - by " + songs0[i].artist + " on the album " + songs0[i].album;
     songs.push(tempSong);
   }
@@ -100,20 +100,28 @@ function listMusic(){
   // Add Event Handler
   let moreButton = document.getElementById("more");
 
+  // When More button clicked, check if clicked already. If not add songs from 2nd JSON file
   moreButton.addEventListener("click", function(){
     if (stopMoreButton){
       addSongs2();
+      // if clicked, then set to false so can't click again
       stopMoreButton = false;
     }
-
   });
 
+  // Get array of dButton elements
   let delButtons = document.getElementsByClassName("dButton");
   for (let l=0; l<delButtons.length; l++){
+    // Add Event Listener to every dButton element
     delButtons[l].addEventListener("click", function(e){
-      var idToRemove = this.parentNode.firstChild.getAttribute('id').split("--")[1];
-      alert(songs.splice(idToRemove, 1));
+      // Get id of Article's Header whose dButton was selected and get #
+      console.log("ddd");
+      let idToRemove = this.parentNode.firstChild.getAttribute('id').split("--")[1];
+      // Remove selected song from array and discard it
+      let discardedVariable1 = songs.splice(idToRemove, 1);
+      // remove selected Song from DOM
       this.parentNode.parentNode.removeChild(this.parentNode);
+      // Repaint with current array of songs
       listMusic();
     });
   }

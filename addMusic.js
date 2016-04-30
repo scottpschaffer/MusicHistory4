@@ -36,6 +36,7 @@ function addMusic(){
       // Add text to end of array
       songs.push(songsListEntry);
       alert("Song information added!");
+      // Reset fields for next song
       songNameText.value = "";
       artistNameText.value = "";
       albumNameText.value = "";
